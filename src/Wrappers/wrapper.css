@@ -1,0 +1,19 @@
+.card_container{
+    height: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.graph_container{
+    padding: 30px 10px;
+}
+.select_container{
+    margin: 10px auto;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

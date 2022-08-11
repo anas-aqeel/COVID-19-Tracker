@@ -1,7 +1,7 @@
 import React from "react";
 import "./components.css";
 
-let countries = [
+export let countries = [
   { country: "Pakistan", cases: 233 },
   { country: "India", cases: 2333 },
   { country: "China", cases: 211 },
@@ -25,6 +25,9 @@ const Table = () => {
       <th>
         <td>Country</td>
         <td>Cases</td>
+        <td>Recovered</td>
+        <td>Deaths</td>
+        <td>Population</td>
       </th>
       {countries.map((country) => (
         <tr>

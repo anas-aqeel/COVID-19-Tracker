@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar";
 import StatsContainer from "./Wrappers/StatsContainer";
-import GraphContainer from "./Wrappers/GraphContainer";
+import GraphsContainer from "./Wrappers/GraphContainer";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <StatsContainer />
-      <GraphContainer />
+      <GraphsContainer />
       <Footer />
     </div>
   );

@@ -4,25 +4,27 @@ import "./components.css";
 
 function InfoCard({ title, cases, total, active, isRed, ...props }) {
   return (
+
     <Card
       onClick={props.onClick}
       className={`infoBox ${active && "infoBox--selected"} ${
-        isRed && "infoBox--red"
-      }`}
+        isRed && "infoBox--red"} `}
     >
-      <CardContent>
+      <CardContent style={{padding:'0px'}}>
         <Typography color="textSecondary" gutterBottom>
           {title}
         </Typography>
-        <h2 className={`infoBox__cases ${!isRed && "infoBox__cases--green"}`}>
+        <p className={`infoBox__cases ${!isRed && "infoBox__cases--green"}`}>
           {cases}
-        </h2>
+        </p>
 
-        <Typography className="infoBox__total" color="textSecondary">
+        <p className="infoBox__total" color="textSecondary">
           {total} Total
-        </Typography>
+        </p>
       </CardContent>
     </Card>
+
+
   );
 }
 

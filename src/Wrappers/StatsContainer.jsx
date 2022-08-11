@@ -4,23 +4,26 @@ import Grid from '@mui/material/Grid';
 import Table from '../Components/Table';
 import Map from '../Components/Map';
 import InfoCard from '../Components/InfoCard';
+import './wrapper.css'
 export default function StatsContainer() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
+      <Grid container>
 
         <Grid item xs={12} md={2}>
-          <InfoCard  title='Cases' active={212} cases={21} isRed={false} total={32} />
-          <InfoCard  title='Cases' active={212} cases={21} isRed={false} total={32} />
-          <InfoCard  title='Cases' active={212} cases={21} isRed={false} total={32} />
-
+          <div className="card_container">
+            <InfoCard  title='Cases' active={true} cases={21} isRed={true} total={32} />
+            <InfoCard  title='Recovered' active={false} cases={21} isRed={false} total={32} />
+            <InfoCard  title='Deaths' active={false} cases={21} isRed={true} total={32} />
+            <InfoCard  title='Population' active={false} cases={21} isRed={false} total={32} />
+          </div>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={5}>
           <Map/>
         </Grid>
 
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} sm={12} md={5}>
           <Table/>
         </Grid>
 
