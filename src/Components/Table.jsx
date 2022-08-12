@@ -159,7 +159,7 @@ const Table = () => {
         <td>Population</td>
       </th>
       {countries.map((country) => (
-        <tr>
+        <tr onClick={()=>console.log(country)}>
           <td>
             {country.country} <img src={country.flag} width={20} />
           </td>

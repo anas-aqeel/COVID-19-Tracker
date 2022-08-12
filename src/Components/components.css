@@ -15,6 +15,9 @@
   display: flex;
   justify-content: space-between;
 }
+.table tr{
+  cursor: pointer;
+}
 
 .table th {
   position: sticky;
