@@ -8,6 +8,7 @@ import { useContext } from "react";
 
 export default function SelectLabels(props) {
   let { data : {countryData}} = useContext(MyContext)
+  console.log(countryData)
   const [filter, setFilter] = React.useState("WorldWide");
 
   const handleChange = (event) => {

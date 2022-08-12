@@ -1,20 +1,22 @@
 import React, { createContext, useEffect, useState } from "react";
 
-export let MyContext = createContext({});
+let initialData = {
+  countryData: [],
+  worldWideData: [],
+}
+export let MyContext = createContext(initialData);
 
 const GlobalContext = (props) => {
-  let [data, setData] = useState({});
-  let [countryData, setCountryData] = useState();
-  let [worldWideData, setWorldWideData] = useState();
+  let [data, setData] = useState(initialData);
 
   useEffect(() => {
     let fetchData = async () => {
-      let response = await fetch(`https://disease.sh/v3/covid-19/countries`);
-      response = await response.json();
-      let worldWide = await fetch(`https://disease.sh/v3/covid-19/all`);
-      worldWide = await worldWide.json();
-
-      setData({ countryData: response, worldWideData: worldWide });
+      let countryData = await fetch(`https://disease.sh/v3/covid-19/countries`);
+      countryData = await countryData.json();
+      console.log(countryData)
+      let worldWideData = await fetch(`https://disease.sh/v3/covid-19/all`);
+      worldWideData = await worldWideData.json();
+      setData({ countryData, worldWideData });
     };
     fetchData();
   }, []);

@@ -1,38 +1,61 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Table from '../Components/Table';
-import Map from '../Components/Map';
-import InfoCard from '../Components/InfoCard';
-import './wrapper.css'
-import { MyContext } from '../Context/GlobalContext';
-import { useContext } from 'react';
+import React from "react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Table from "../Components/Table";
+import Map from "../Components/Map";
+import InfoCard from "../Components/InfoCard";
+import "./wrapper.css";
+import { MyContext } from "../Context/GlobalContext";
+import { useContext } from "react";
 
 export default function StatsContainer() {
-
-  let {data :{worldWideData}} = useContext(MyContext)
+  let {
+    data: { worldWideData },
+  } = useContext(MyContext);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container>
-
         <Grid item xs={12} md={2}>
           <div className="card_container">
-            <InfoCard  title='Cases' active={true} cases={worldWideData?.cases} isRed={true}/>
-            <InfoCard  title='Recovered' active={false} cases={worldWideData?.recovered} isRed={false}/>
-            <InfoCard  title='Deaths' active={false} cases={worldWideData?.deaths} isRed={true}/>
-            <InfoCard  title='Population' active={false} cases={worldWideData?.population} isRed={false}/>
+            <InfoCard
+              title="Cases"
+              active={true}
+              total={worldWideData?.cases}
+              cases={worldWideData?.todayCases}
+              isRed={true}
+            />
+            <InfoCard
+              title="Recovered"
+              active={false}
+              total={worldWideData?.recovered}
+              cases={worldWideData?.todayRecovered}
+              isRed={false}
+            />
+            <InfoCard
+              title="Deaths"
+              active={false}
+              total={worldWideData?.deaths}
+              cases={worldWideData?.todayDeaths}
+              isRed={true}
+            />
+            <InfoCard
+              title="Population"
+              active={false}
+              total={worldWideData?.population}
+              cases={worldWideData?.todayPopulation}
+              isRed={false}
+            />
           </div>
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Map/>
+          <Map />
         </Grid>
 
         <Grid item xs={12} sm={12} md={4}>
-          <Table/>
+          <Table />
         </Grid>
-
       </Grid>
     </Box>
   );
