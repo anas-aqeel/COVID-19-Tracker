@@ -1,12 +1,12 @@
 .card_container{
     height: 100%;
-    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 .graph_container{
+    margin-top: 20px;
     padding: 30px 10px;
 }
 .select_container{

@@ -13,7 +13,7 @@ function GraphCard({ title, imgSrc }) {
           {title}
         </Typography>
 
-        <img src={imgSrc} alt={title} />
+        <img width={150} src={imgSrc} alt={title} />
       </CardContent>
     </Card>
 

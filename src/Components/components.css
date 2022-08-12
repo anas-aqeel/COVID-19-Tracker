@@ -1,120 +1,141 @@
 .table {
-    margin: 0px 8px;
-    margin-top: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    color: #6a5d5d;
-    background-color: white;
-    border-radius: 5px;
-    height: 520px;
-    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .table tr, .table th {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .table th{
-    position: sticky;
-    background-color: rgb(194, 194, 194);
-    top: 0px;
-    right: 0px;
-    left: 0px;
-  }
-  .table td {
-    padding: 0.5rem;
-    border: none;
-  }
-  
-  .table tr:nth-of-type(odd) {
-    background-color: #f3f2f8;
-  }
-  .map {
-    height: 530px;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 20px;
-    margin-top: 16px;
-    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .map .leaflet-container {
-    height: 100%;
-    border-radius: 12px;
-  }
-  
-  .info-flag img {
-    width: 100px;
-    border-radius: 5px;
-  }
-  
-  .infoBox{
-    padding: 10px;
-    width: 160px;
-    margin: 7px;
-    cursor: pointer;
-    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5) !important;
-  }
- 
-  .infoBox:not(:last-child) {
-    margin-right: 10px;
-  }
-  .info-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: #555;
-  }
-  .info-flag {
-    height: 80px;
-    width: 100%;
-    background-size: cover;
-    border-radius: 8px;
-  }
-  .infoBox__cases {
-    color: #cc1034;
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 0rem;
-  }
-  .infoBox__total {
-    color: #6c757d;
-    font-weight: 700 !important;
-    font-size: 0.8rem !important;
-    margin-top: 8px !important;
-  }
-  .infoBox__cases--green {
-    color: lightgreen !important;
-  }
-  .infoBox--selected {
-    border-top: 10px solid rgb(6, 32, 71);
-  }
-  .infoBox--red{
-    border-color: rgb(82, 7, 7);
-  }
-  .info-recovered{
-    border-color:  rgb(3, 49, 17);
-  }
-  .info-confirmed,
-  .info-recovered,
-  .info-deaths {
-    font-size: 16px;
-    margin-top: 5px;
-  }
-
-  .footer{
-    background-color: rgb(240, 240, 240) !important;
-    height: 35px;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(73, 73, 73, 0.514) 0px 4px 29px 0px !important;
-   
+  margin: 0px 8px;
+  margin-top: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #6a5d5d;
+  background-color: white;
+  border-radius: 5px;
+  height: 520px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
-.footer-heading{
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 13px;
-    color: rgb(80, 80, 80);
+
+.table tr,
+.table th {
+  display: flex;
+  justify-content: space-between;
+}
+
+.table th {
+  position: sticky;
+  background-color: rgb(232, 241, 247);
+  top: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.table td {
+  padding: 0.5rem;
+  border: none;
+}
+
+.table tr:nth-of-type(odd) {
+  background-color: #f3f2f8;
+}
+
+.map {
+  height: 530px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 16px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.graph {
+  height: 530px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 16px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.map .leaflet-container {
+  height: 100%;
+  border-radius: 12px;
+}
+
+.info-flag img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.infoBox {
+  padding: 10px;
+  width: 160px;
+  margin: 7px;
+  cursor: pointer;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.infoBox:not(:last-child) {
+  margin-right: 10px;
+}
+
+.info-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+.info-flag {
+  height: 80px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.infoBox__cases {
+  color: #cc1034;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0rem;
+}
+
+.infoBox__total {
+  color: #6c757d;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  margin-top: 8px !important;
+}
+
+.infoBox__cases--green {
+  color: lightgreen !important;
+}
+
+.infoBox--selected {
+  border-top: 10px solid rgb(6, 32, 71);
+}
+
+.infoBox--red {
+  border-color: rgb(82, 7, 7);
+}
+
+.info-recovered {
+  border-color: rgb(3, 49, 17);
+}
+
+.info-confirmed,
+.info-recovered,
+.info-deaths {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.footer {
+  background-color: rgb(240, 240, 240) !important;
+  height: 35px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(73, 73, 73, 0.514) 0px 4px 29px 0px !important;
+}
+
+.footer-heading {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  color: rgb(80, 80, 80);
 }
