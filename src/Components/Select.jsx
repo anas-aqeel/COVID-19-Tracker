@@ -3,9 +3,11 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { countries } from "./Table";
+import { MyContext } from "../Context/GlobalContext";
+import { useContext } from "react";
 
 export default function SelectLabels(props) {
+  let { data : {countryData}} = useContext(MyContext)
   const [filter, setFilter] = React.useState("WorldWide");
 
   const handleChange = (event) => {
@@ -24,7 +26,7 @@ export default function SelectLabels(props) {
         >
           {props.children}
 
-          {countries.map((e)=>(
+          {countryData?.map((e)=>(
             <MenuItem value={e.country}>{e.country}</MenuItem>
           ))}
         </Select>

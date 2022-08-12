@@ -5,17 +5,23 @@ import Table from '../Components/Table';
 import Map from '../Components/Map';
 import InfoCard from '../Components/InfoCard';
 import './wrapper.css'
+import { MyContext } from '../Context/GlobalContext';
+import { useContext } from 'react';
+
 export default function StatsContainer() {
+
+  let {data :{worldWideData}} = useContext(MyContext)
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container>
 
         <Grid item xs={12} md={2}>
           <div className="card_container">
-            <InfoCard  title='Cases' active={true} cases={21} isRed={true} total={32} />
-            <InfoCard  title='Recovered' active={false} cases={21} isRed={false} total={32} />
-            <InfoCard  title='Deaths' active={false} cases={21} isRed={true} total={32} />
-            <InfoCard  title='Population' active={false} cases={21} isRed={false} total={32} />
+            <InfoCard  title='Cases' active={true} cases={worldWideData?.cases} isRed={true}/>
+            <InfoCard  title='Recovered' active={false} cases={worldWideData?.recovered} isRed={false}/>
+            <InfoCard  title='Deaths' active={false} cases={worldWideData?.deaths} isRed={true}/>
+            <InfoCard  title='Population' active={false} cases={worldWideData?.population} isRed={false}/>
           </div>
         </Grid>
 

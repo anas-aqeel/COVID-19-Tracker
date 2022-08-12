@@ -2,15 +2,16 @@ import Navbar from "./Components/Navbar";
 import StatsContainer from "./Wrappers/StatsContainer";
 import GraphsContainer from "./Wrappers/GraphContainer";
 import Footer from "./Components/Footer";
+import GlobalContext from "./Context/GlobalContext";
 
 function App() {
   return (
-    <div className="App">
+    <GlobalContext>
       <Navbar />
       <StatsContainer />
       <GraphsContainer />
       <Footer />
-    </div>
+    </GlobalContext>
   );
 }
 

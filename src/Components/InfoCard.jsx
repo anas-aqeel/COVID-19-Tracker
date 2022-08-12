@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 import "./components.css";
 
-function InfoCard({ title, cases, total, active, isRed, ...props }) {
+function InfoCard({ title, cases, active, isRed, ...props }) {
   return (
 
     <Card
@@ -16,10 +16,6 @@ function InfoCard({ title, cases, total, active, isRed, ...props }) {
         </Typography>
         <p className={`infoBox__cases ${!isRed && "infoBox__cases--green"}`}>
           {cases}
-        </p>
-
-        <p className="infoBox__total" color="textSecondary">
-          {total} Total
         </p>
       </CardContent>
     </Card>

@@ -1,7 +1,8 @@
+
 .table {
   margin: 0px 8px;
   margin-top: 20px;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: auto;
   color: #6a5d5d;
   background-color: white;
