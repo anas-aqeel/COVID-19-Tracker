@@ -1,5 +1,5 @@
 import React from "react";
-import "./components.css";
+import "../components.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -65,7 +65,7 @@ import faker from 'faker';
     ],
   };
 
-const Graphs = () => {
+const LineGraph = () => {
   return (
     <div className="graph">
     <Line options={options} data={data} />;
@@ -73,5 +73,5 @@ const Graphs = () => {
   )
 }
 
-export default Graphs;
+export default LineGraph;
 

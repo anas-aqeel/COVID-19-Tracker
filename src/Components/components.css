@@ -23,10 +23,17 @@
   right: 0px;
   left: 0px;
 }
-
+.table th td{
+  font-size: 13px;
+  min-width: 10px;
+}
 .table td {
   padding: 0.5rem;
   border: none;
+  
+}
+td img{
+  margin-left: 5px;
 }
 
 .table tr:nth-of-type(odd) {
@@ -47,8 +54,15 @@
   background-color: white;
   padding: 1rem;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 16px;
   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+.doughnut_graph{
+  max-height: 454px;
+  max-width: 454px;
 }
 
 .map .leaflet-container {

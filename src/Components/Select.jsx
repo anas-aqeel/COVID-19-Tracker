@@ -5,7 +5,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { countries } from "./Table";
 
-export default function SelectLabels() {
+export default function SelectLabels(props) {
   const [filter, setFilter] = React.useState("WorldWide");
 
   const handleChange = (event) => {
@@ -22,10 +22,8 @@ export default function SelectLabels() {
           label="Filter"
           onChange={handleChange}
         >
-          <MenuItem value="WorldWide">WorldWide</MenuItem>
-          <MenuItem value="cases">Top 10 Countries by cases</MenuItem>
-          <MenuItem value="deaths">Top 10 Countries by deaths</MenuItem>
-          <MenuItem value="recoveries">Top 10 Countries by recoveries</MenuItem>
+          {props.children}
+
           {countries.map((e)=>(
             <MenuItem value={e.country}>{e.country}</MenuItem>
           ))}
