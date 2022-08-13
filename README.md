@@ -65,7 +65,5 @@ I'm a Front-end  developer...
 #### For support,
 ##### email anasaqeel.4444@gmail.com
 ##### subscribe my youtube channel https://www.youtube.com/channel/UCjSbj0xD5862e-6802uShVQ.
-<div align="center">
-### Feel free to star ⭐!
 
-</div>
+### Feel free to star ⭐!
