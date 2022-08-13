@@ -47,11 +47,13 @@ React Realtime worldwide Covid-19 Tracker with Graphs and Maps integration
  https://62f7be8694aca535f6cf61ec--moonlit-alpaca-e5259d.netlify.app/#close
 
 ## Want to clone just UI?
-
 #### Switch Branch to gh-pages
+    git clone https://github.com/Anas-Aqeel/COVID-19-Tracker.git
+
+
 ## Authors
 
-- [@Anas-Aeel](https://www.github.com/Anas-Aeel)
+- [@Anas-Aqeel](https://www.github.com/Anas-Aeel)
 
 
 ## 🚀 About Me
@@ -60,5 +62,10 @@ I'm a Front-end  developer...
 
 ## Support
 
-For support, email anasaqeel.4444@gmail.com or subscribe my youtube channel https://www.youtube.com/channel/UCjSbj0xD5862e-6802uShVQ.
+#### For support,
+##### email anasaqeel.4444@gmail.com
+##### subscribe my youtube channel https://www.youtube.com/channel/UCjSbj0xD5862e-6802uShVQ.
+<div align="center">
+### Feel free to star ⭐!
 
+</div>
