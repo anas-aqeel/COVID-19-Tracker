@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import GraphCard from "../Components/GraphCard";
@@ -26,25 +26,36 @@ export default function GraphsContainer() {
     data: { countryData },
   } = useContext(MyContext);
 
-  let byDeaths = useMemo(() => sortByDeaths(countryData), [countryData]);
-  let byCases = useMemo(() => sortByCases(countryData), [countryData]);
-  let byRecoveries = useMemo(() => sortByRecoveries(countryData), [countryData]);
-
-  let initialFilter = filterListData(byCases);
+  let initialFilter = filterListData(countryData);
   let [filteredList, setFilteredList] = useState(initialFilter);
 
   let [MyGraph, SetMyGraph] = useState(
     <LineGraph filteredData={filteredList} />
   );
-
+  let [sortCases, setSortedCases] = useState({
+  })
+  useEffect(()=>{
+    setSortedCases({
+      cases: sortByCases(countryData),
+      deaths: sortByDeaths(countryData),
+      recovery: sortByRecoveries(countryData),
+    })
+  },[])
   return (
     <div className="graph_container">
       <div className="select_container">
-        <SelectLabels>
+        <SelectLabels
+          onClick={() => {
+            let a = filterListData(countryData)
+            setFilteredList(a);
+            SetMyGraph(<LineGraph filteredData={a} />)
+          }}
+        >
           <MenuItem
             onClick={() => {
-              let a = filterListData(byCases);
+              let a = filterListData(sortCases.cases);
               setFilteredList(a);
+              SetMyGraph(<LineGraph filteredData={a} />);
             }}
             value="cases"
           >
@@ -52,8 +63,9 @@ export default function GraphsContainer() {
           </MenuItem>
           <MenuItem
             onClick={() => {
-              let a = filterListData(byDeaths);
+              let a = filterListData(sortCases.deaths);
               setFilteredList(a);
+              SetMyGraph(<LineGraph filteredData={a} />);
             }}
             value="deaths"
           >
@@ -61,8 +73,9 @@ export default function GraphsContainer() {
           </MenuItem>
           <MenuItem
             onClick={() => {
-              let a = filterListData(byRecoveries);
+              let a = filterListData(sortCases.recovery);
               setFilteredList(a);
+              SetMyGraph(<LineGraph filteredData={a} />);
             }}
             value="recoveries"
           >
@@ -78,7 +91,6 @@ export default function GraphsContainer() {
                 title="Line Graph"
                 onClick={() =>
                   SetMyGraph(<LineGraph filteredData={filteredList} />)
-
                 }
                 imgSrc={linegraph}
               />

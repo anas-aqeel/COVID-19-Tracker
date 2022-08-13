@@ -8,7 +8,6 @@ import { useContext } from "react";
 
 export default function SelectLabels(props) {
   let {
-    data: { countryData },
     fetchQueryData,
   } = useContext(MyContext);
   const [filter, setFilter] = React.useState("WorldWide");
@@ -25,15 +24,10 @@ export default function SelectLabels(props) {
         value={filter}
         label="Filter"
         onChange={handleChange}
+        fullWidth={true}
       >
-        <MenuItem onClick={() => fetchQueryData(`all`)} value="WorldWide">WorldWide</MenuItem>
-        {props.children}
-
-        {countryData?.map((e) => (
-          <MenuItem onClick={() => fetchQueryData(`countries/${e.country}`)} key={e.country} value={e.country}>
-            {e.country}
-          </MenuItem>
-        ))}
+        <MenuItem onClick={props.onClick} value="WorldWide">WorldWide</MenuItem>
+        {props.children}        
       </Select>
     </FormControl>
   );
