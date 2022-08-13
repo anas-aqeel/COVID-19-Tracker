@@ -3,10 +3,10 @@ import { Card, CardContent, Typography } from "@mui/material";
 import "./components.css";
 import numeral from "numeral";
 
-function InfoCard({ title, cases, total, active, isRed, ...props }) {
+function InfoCard({ title, cases, total, active, isRed, onClick }) {
   return (
     <Card
-      onClick={props.onClick}
+      onClick={onClick}
       className={`infoBox ${active && "infoBox--selected"} ${
         isRed && "infoBox--red"
       } `}

@@ -12,10 +12,10 @@ const Table = () => {
     <table  className="table">
       <thead>
         <tr>
-          <td>Countries </td>
+          <td className="col-1">Countries </td>
           <td>Cases</td>
           <td>Recovered</td>
-          <td>Deatds</td>
+          <td>Deaths</td>
           <td>Population</td>
         </tr>
       </thead>
@@ -24,7 +24,7 @@ const Table = () => {
             ?.sort((a, b) => b.cases - a.cases)
             ?.map((country) => (
               <tr key={country.country} onClick={() => fetchQueryData(`countries/${country.country}`)}>
-                <td>
+                <td className="col-1">
                   <img
                     src={country.countryInfo.flag}
                     alt={country.country}
@@ -32,7 +32,7 @@ const Table = () => {
                   />
                   {country.country}{" "}
                 </td>
-                <td>{`+${numeral(country.cases).format("0.0a")}`}</td>
+                <td className="col-2">{`+${numeral(country.cases).format("0.0a")}`}</td>
                 <td>{`+${numeral(country.recovered).format("0.0a")}`}</td>
                 <td>{`+${numeral(country.deaths).format("0.0a")}`}</td>
                 <td>{`+${numeral(country.population).format("0.0a")}`}</td>

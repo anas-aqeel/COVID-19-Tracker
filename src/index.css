@@ -20,6 +20,8 @@ code {
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 9px;
+  border-radius: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #d1d1d1; 

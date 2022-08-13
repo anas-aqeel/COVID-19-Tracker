@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, {  useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import GraphCard from "../Components/GraphCard";
@@ -16,10 +16,8 @@ import {
   sortByRecoveries,
   filterListData,
 } from "../utils/filterCountries";
-
 import "./wrapper.css";
 import { MyContext } from "../Context/GlobalContext";
-import { useMemo } from "react";
 
 export default function GraphsContainer() {
   let {

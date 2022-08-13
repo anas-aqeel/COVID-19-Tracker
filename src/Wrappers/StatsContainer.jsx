@@ -1,14 +1,16 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Table from "../Components/Table";
+import MyTable from "../Components/MuiTable";
 import Map from "../Components/Map";
 import InfoCard from "../Components/InfoCard";
 import "./wrapper.css";
 import { MyContext } from "../Context/GlobalContext";
 import { useContext } from "react";
+import { useState } from "react";
 
 export default function StatsContainer() {
+  let [queryType, setQueryType] = useState('cases')
   let {
     data: { queryData },
   } = useContext(MyContext);
@@ -24,6 +26,7 @@ export default function StatsContainer() {
               total={queryData?.cases}
               cases={queryData?.todayCases}
               isRed={true}
+              onClick={()=>setQueryType('cases')}
             />
             <InfoCard
               title="Recovered"
@@ -31,6 +34,8 @@ export default function StatsContainer() {
               total={queryData?.recovered}
               cases={queryData?.todayRecovered}
               isRed={false}
+              onClick={()=>setQueryType('recovered')}
+
             />
             <InfoCard
               title="Deaths"
@@ -38,6 +43,8 @@ export default function StatsContainer() {
               total={queryData?.deaths}
               cases={queryData?.todayDeaths}
               isRed={true}
+              onClick={()=>setQueryType('deaths')}
+
             />
             <InfoCard
               title="Population"
@@ -50,11 +57,11 @@ export default function StatsContainer() {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Map />
+          <Map queryType={queryType} />
         </Grid>
 
         <Grid item xs={12} sm={12} md={4}>
-          <Table />
+          <MyTable />
         </Grid>
       </Grid>
     </Box>

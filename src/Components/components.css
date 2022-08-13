@@ -1,11 +1,9 @@
-
 .table {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   margin: 0px 8px;
   margin-top: 20px;
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow-x: scroll;
+  overflow-y: scroll;
   color: #6a5d5d;
   background-color: white;
   border-radius: 5px;
@@ -13,7 +11,14 @@
   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
 
-.table tr {
+.sticky {
+  position: sticky;
+  left: 0;
+  background: white;
+}
+
+/* flex-direction: column; */
+/* .table tr {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -37,7 +42,15 @@
 .table td {
   padding: 0.5rem;
   border: none;
-  
+}
+.col-1{
+  width: 282px !important;
+}
+.col-2{
+  display: flex;
+  justify-content: start;
+  text-align: left;
+  width: 282px !important;
 }
 td img{
   margin-right: 8px;
@@ -45,7 +58,7 @@ td img{
 
 .table tr:nth-of-type(odd) {
   background-color: #f3f2f8;
-}
+} */
 
 .map {
   height: 530px;
@@ -67,7 +80,7 @@ td img{
   margin-top: 16px;
   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
-.doughnut_graph{
+.doughnut_graph {
   max-height: 454px;
   max-width: 454px;
 }
