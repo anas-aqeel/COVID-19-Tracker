@@ -13,14 +13,12 @@ const GlobalContext = (props) => {
     let queryData = await fetch(`https://disease.sh/v3/covid-19/${query}`);
     queryData = await queryData.json();
     setData({...data, queryData})
-    console.log(queryData)
   }
   
   useEffect(() => {
     let fetchData = async () => {
       let countryData = await fetch(`https://disease.sh/v3/covid-19/countries`);
       countryData = await countryData.json();
-      console.log(countryData)
       let queryData = await fetch(`https://disease.sh/v3/covid-19/all`);
       queryData = await queryData.json();
       setData({ countryData, queryData });

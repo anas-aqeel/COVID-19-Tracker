@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { data } from "./LineGraph";
+import formatData, {options} from "../../utils/graphsConfig";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -19,23 +19,13 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "bottom",
-    },
-    title: {
-      display: true,
-      text: "Bar Chart",
-    },
-  },
-};
 
-export default function BarGraph() {
+export default function BarGraph({filteredData}) {
+  let formattedData = formatData(filteredData)
+
   return (
     <div className="graph">
-      <Bar options={options} data={data} />
+      <Bar  options={options} data={formattedData} />
     </div>
   );
 }

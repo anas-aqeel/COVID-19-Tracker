@@ -1,4 +1,6 @@
 export let sortByCases = (countryData) => {
+  console.log(countryData)
+  // console.log(countryData?.sort((a, b) => b.cases - a.cases).length)
   return countryData?.sort((a, b) => b.cases - a.cases).splice(0, 10);
 };
 

@@ -11,7 +11,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+import formatData, {options} from "../../utils/graphsConfig";
 
 
   ChartJS.register(
@@ -24,75 +24,14 @@ import faker from 'faker';
     Legend
   );
 
-  export const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'bottom',
-      },
-      title: {
-        display: true,
-        text: 'Line Chart',
-      },
 
-    },
-    
-  };
-  
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  
-  export const data = {
-    labels,
-    datasets: [
-      {
-        label: 'Cases',
-        data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      {
-        label: 'Deaths',
-        data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      },
-      {
-        label: 'Recoveries',
-        data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-        borderColor: '#106636',
-        backgroundColor: '#10b558',
-      }
-    ],
-  };
+ 
 
-const LineGraph = ({filteredList}) => {
-  // console.log(filteredList)
-  const data = {
-    labels: filteredList?.map(({name})=>name),
-    datasets: [
-      {
-        label: 'Cases',
-        data: filteredList?.map(({cases})=>cases),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      },
-      {
-        label: 'Deaths',
-        data: filteredList?.map(({deaths})=>deaths),
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      },
-      {
-        label: 'Recoveries',
-        data: filteredList?.map(({deaths})=>deaths),
-        borderColor: '#106636',
-        backgroundColor: '#10b558',
-      }
-    ],
-  };
+const LineGraph = ({filteredData}) => {
+  let formattedData = formatData(filteredData)
   return (
     <div className="graph">
-    <Line options={options} data={data} />;
+    <Line options={options} data={formattedData} />
   </div>
   )
 }

@@ -1,5 +1,7 @@
 
 .table {
+  display: flex;
+  flex-direction: column;
   margin: 0px 8px;
   margin-top: 20px;
   overflow-x: auto;
@@ -11,8 +13,8 @@
   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
 
-.table tr,
-.table th {
+.table tr {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -20,7 +22,8 @@
   cursor: pointer;
 }
 
-.table th {
+.table thead {
+
   position: sticky;
   background-color: rgb(232, 241, 247);
   top: 0px;

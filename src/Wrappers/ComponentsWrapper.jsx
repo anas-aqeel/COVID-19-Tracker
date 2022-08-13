@@ -8,7 +8,7 @@ import { MyContext } from '../Context/GlobalContext'
 
 const ComponentsWrapper = () => {
     let { data: { countryData } } = useContext(MyContext)
-    if (countryData) {
+    if (countryData.length) {
         return (
             <>
                 <Navbar />
@@ -17,7 +17,7 @@ const ComponentsWrapper = () => {
                 <Footer />
             </>
         )
-    } else { return <Spinner/> }
+    } else { return <Spinner /> }
 }
 
 export default ComponentsWrapper

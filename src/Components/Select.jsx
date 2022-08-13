@@ -30,7 +30,7 @@ export default function SelectLabels(props) {
         {props.children}
 
         {countryData?.map((e) => (
-          <MenuItem onClick={() => fetchQueryData(`countries/${e.country}`)} value={e.country}>
+          <MenuItem onClick={() => fetchQueryData(`countries/${e.country}`)} key={e.country} value={e.country}>
             {e.country}
           </MenuItem>
         ))}

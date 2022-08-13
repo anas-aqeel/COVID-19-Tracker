@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import GraphCard from "../Components/GraphCard";
@@ -19,24 +19,26 @@ import {
 
 import "./wrapper.css";
 import { MyContext } from "../Context/GlobalContext";
+import { useMemo } from "react";
 
 export default function GraphsContainer() {
-  let { data: { countryData } } = useContext(MyContext);
+  let {
+    data: { countryData },
+  } = useContext(MyContext);
 
-  let byDeaths = sortByDeaths(countryData);
-  let byCases = sortByCases(countryData);
-  let byRecoveries = sortByRecoveries(countryData);
+  let byDeaths = useMemo(() => sortByDeaths(countryData), [countryData]);
+  let byCases = useMemo(() => sortByCases(countryData), [countryData]);
+  let byRecoveries = useMemo(() => sortByRecoveries(countryData), [countryData]);
 
-  let initialFilter = filterListData(byCases)
+  let initialFilter = filterListData(byCases);
   let [filteredList, setFilteredList] = useState(initialFilter);
 
-
-  let [MyGraph, SetMyGraph] = useState(<LineGraph data={filteredList} />);
+  let [MyGraph, SetMyGraph] = useState(
+    <LineGraph filteredData={filteredList} />
+  );
 
   return (
     <div className="graph_container">
-      <button onClick={() => console.log(byDeaths)}>g</button>
-
       <div className="select_container">
         <SelectLabels>
           <MenuItem
@@ -48,16 +50,22 @@ export default function GraphsContainer() {
           >
             Top 10 Countries by cases
           </MenuItem>
-          <MenuItem onClick={() => {
-            let a = filterListData(byDeaths);
-            setFilteredList(a);
-          }} value="deaths">
+          <MenuItem
+            onClick={() => {
+              let a = filterListData(byDeaths);
+              setFilteredList(a);
+            }}
+            value="deaths"
+          >
             Top 10 Countries by deaths
           </MenuItem>
-          <MenuItem onClick={() => {
-            let a = filterListData(byRecoveries);
-            setFilteredList(a);
-          }} value="recoveries">
+          <MenuItem
+            onClick={() => {
+              let a = filterListData(byRecoveries);
+              setFilteredList(a);
+            }}
+            value="recoveries"
+          >
             Top 10 Countries by recoveries
           </MenuItem>
         </SelectLabels>
@@ -68,19 +76,24 @@ export default function GraphsContainer() {
             <div className="card_container">
               <GraphCard
                 title="Line Graph"
-                onClick={() => SetMyGraph(<LineGraph data={filteredList} />)}
+                onClick={() =>
+                  SetMyGraph(<LineGraph filteredData={filteredList} />)
+
+                }
                 imgSrc={linegraph}
               />
               <GraphCard
                 title="Pie Graph"
                 onClick={() =>
-                  SetMyGraph(<DoughnutGraph data={filteredList} />)
+                  SetMyGraph(<DoughnutGraph filteredData={filteredList} />)
                 }
                 imgSrc={piegraph}
               />
               <GraphCard
                 title="Bar Graph"
-                onClick={() => SetMyGraph(<BarGraph data={filteredList} />)}
+                onClick={() => {
+                  SetMyGraph(<BarGraph filteredData={filteredList} />);
+                }}
                 imgSrc={bargraph}
               />
             </div>
