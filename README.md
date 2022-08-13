@@ -1,70 +1,64 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# COVID-19 Tracker
 
-## Available Scripts
+React Realtime worldwide Covid-19 Tracker with Graphs and Maps integration
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Libraries
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ - [Material UI](https://mui.com/)
+ - [ChartJS](https://www.chartjs.org/)
+ - [React-chartjs-2](https://react-chartjs-2.js.org/)
+ - [Leaflet](https://leafletjs.com/)
+ - [React-leaflet](https://react-leaflet.js.org/)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Operations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Show data visually on maps
+##### 1-Show circles (by cases) on maps
+##### 2-Show circles (by deaths) on maps
+##### 3-Show circles (by recoveries) on maps
+##### 4-Show circles (by population) on maps
 
-### `npm run eject`
+### Show data on table according to query
+##### 1-Show country info (desending order by cases)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Show data visually on graphs
+##### 1-Show data (filtered by cases) on graphs
+##### 2-Show data (filtered by deaths) on graphs
+##### 3-Show data (filtered by recoveries) on graphs
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Preview
 
-## Learn More
+![App Screenshot](https://raw.githubusercontent.com/Anas-Aqeel/COVID-19-Tracker/Master/src/assets/images/front.png)
+![App Screenshot](https://raw.githubusercontent.com/Anas-Aqeel/COVID-19-Tracker/Master/src/assets/images/sort.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Demo
 
-### Code Splitting
+#### Live Demo 👇👇:
+ https://62f7be8694aca535f6cf61ec--moonlit-alpaca-e5259d.netlify.app/#close
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Want to clone just UI?
 
-### Analyzing the Bundle Size
+#### Switch Branch to gh-pages
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [@Anas-Aeel](https://www.github.com/Anas-Aeel)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🚀 About Me
+I'm a Front-end  developer...
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Support
 
-### Deployment
+For support, email anasaqeel.4444@gmail.com or subscribe my youtube channel https://www.youtube.com/channel/UCjSbj0xD5862e-6802uShVQ.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
