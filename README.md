@@ -27,6 +27,8 @@ React Realtime worldwide Covid-19 Tracker with Graphs and Maps integration
 
 ### Show data on table according to query
 ##### 1-Show country info (desending order by cases)
+##### 2-Query specific country data by clicking a table cell or from a dropdown menu
+
 
 
 ### Show data visually on graphs
