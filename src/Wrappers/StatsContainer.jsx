@@ -10,7 +10,7 @@ import { useContext } from "react";
 
 export default function StatsContainer() {
   let {
-    data: { worldWideData },
+    data: { queryData },
   } = useContext(MyContext);
 
   return (
@@ -21,29 +21,29 @@ export default function StatsContainer() {
             <InfoCard
               title="Cases"
               active={true}
-              total={worldWideData?.cases}
-              cases={worldWideData?.todayCases}
+              total={queryData?.cases}
+              cases={queryData?.todayCases}
               isRed={true}
             />
             <InfoCard
               title="Recovered"
               active={false}
-              total={worldWideData?.recovered}
-              cases={worldWideData?.todayRecovered}
+              total={queryData?.recovered}
+              cases={queryData?.todayRecovered}
               isRed={false}
             />
             <InfoCard
               title="Deaths"
               active={false}
-              total={worldWideData?.deaths}
-              cases={worldWideData?.todayDeaths}
+              total={queryData?.deaths}
+              cases={queryData?.todayDeaths}
               isRed={true}
             />
             <InfoCard
               title="Population"
               active={false}
-              total={worldWideData?.population}
-              cases={worldWideData?.todayPopulation}
+              total={queryData?.population}
+              cases={queryData?.population}
               isRed={false}
             />
           </div>

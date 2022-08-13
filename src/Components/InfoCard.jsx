@@ -19,7 +19,7 @@ function InfoCard({ title, cases, total, active, isRed, ...props }) {
           {`+${numeral(cases).format("0.0a")}`}
         </p>
         <Typography className="infoBox__total" color="textSecondary">
-          {total} Total
+          {`+${numeral(total).format("0.0a")}`} Total
         </Typography>
       </CardContent>
     </Card>

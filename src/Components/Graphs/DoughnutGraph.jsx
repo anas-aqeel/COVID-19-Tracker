@@ -6,10 +6,10 @@ import '../components.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function DoughnutGraph() {
+export default function DoughnutGraph({labels}) {
   return (
     <div className="graph">
-      <Doughnut className="doughnut_graph"  data={data} />
+      <Doughnut className="doughnut_graph"  data={{...data, labels}} />
     </div>
   );
 }

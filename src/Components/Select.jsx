@@ -7,30 +7,34 @@ import { MyContext } from "../Context/GlobalContext";
 import { useContext } from "react";
 
 export default function SelectLabels(props) {
-  let { data : {countryData}} = useContext(MyContext)
-  console.log(countryData)
+  let {
+    data: { countryData },
+    fetchQueryData,
+  } = useContext(MyContext);
   const [filter, setFilter] = React.useState("WorldWide");
 
   const handleChange = (event) => {
     setFilter(event.target.value);
   };
-
   return (
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-helper-label">Search</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={filter}
-          label="Filter"
-          onChange={handleChange}
-        >
-          {props.children}
+    <FormControl sx={{ m: 1, minWidth: 120 }}>
+      <InputLabel id="demo-simple-select-helper-label">Search</InputLabel>
+      <Select
+        labelId="demo-simple-select-helper-label"
+        id="demo-simple-select-helper"
+        value={filter}
+        label="Filter"
+        onChange={handleChange}
+      >
+        <MenuItem onClick={() => fetchQueryData(`all`)} value="WorldWide">WorldWide</MenuItem>
+        {props.children}
 
-          {countryData?.map((e)=>(
-            <MenuItem value={e.country}>{e.country}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+        {countryData?.map((e) => (
+          <MenuItem onClick={() => fetchQueryData(`countries/${e.country}`)} value={e.country}>
+            {e.country}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   );
 }

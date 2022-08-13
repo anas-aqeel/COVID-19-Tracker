@@ -1,18 +1,10 @@
-import Navbar from "./Components/Navbar";
-import StatsContainer from "./Wrappers/StatsContainer";
-import GraphsContainer from "./Wrappers/GraphContainer";
-import Footer from "./Components/Footer";
 import GlobalContext from "./Context/GlobalContext";
-
+import ComponentsWrapper from "./Wrappers/ComponentsWrapper";
 function App() {
   return (
     <GlobalContext>
-      <Navbar />
-      <StatsContainer />
-      <GraphsContainer />
-      <Footer />
+      <ComponentsWrapper />
     </GlobalContext>
   );
 }
-
 export default App;

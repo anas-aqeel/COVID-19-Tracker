@@ -65,7 +65,31 @@ import faker from 'faker';
     ],
   };
 
-const LineGraph = () => {
+const LineGraph = ({filteredList}) => {
+  // console.log(filteredList)
+  const data = {
+    labels: filteredList?.map(({name})=>name),
+    datasets: [
+      {
+        label: 'Cases',
+        data: filteredList?.map(({cases})=>cases),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      },
+      {
+        label: 'Deaths',
+        data: filteredList?.map(({deaths})=>deaths),
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+      {
+        label: 'Recoveries',
+        data: filteredList?.map(({deaths})=>deaths),
+        borderColor: '#106636',
+        backgroundColor: '#10b558',
+      }
+    ],
+  };
   return (
     <div className="graph">
     <Line options={options} data={data} />;
