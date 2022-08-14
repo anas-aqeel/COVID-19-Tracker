@@ -3,11 +3,11 @@ import { useState } from "react";
 import { useContext } from "react";
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import { MyContext } from "../../Context/GlobalContext";
-import { showDataOnMap } from "./MapCircles";
+import { ShowDataOnMap } from "./MapCircles";
 import './map.css'
 function ChangeMapView({ coords }) {
   const map = useMap();
-  map.setView(coords, map.getZoom());
+  map.flyTo(coords, map.getZoom());
   return null;
 }
 
@@ -27,7 +27,7 @@ function Maps({ queryType }) {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
         />
-        {showDataOnMap(countryData, queryType)}
+        <ShowDataOnMap data={countryData} casesType={queryType}/>
         <Marker position={position} />
         <ChangeMapView coords={position} />
       </MapContainer>

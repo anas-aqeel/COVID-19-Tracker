@@ -11,9 +11,13 @@ export default function SelectLabels(props) {
     setFilter(event.target.value);
   };
   return (
-    <FormControl style={{ color: props.color }} sx={{ m: 1, minWidth: 120 }}>
+    <FormControl
+      variant="outlined"
+      style={{ border: "0.001px solid white", color: props.color }}
+      sx={{ m: 1, minWidth: 120 }}
+    >
       <InputLabel
-        style={{ color: props.color }}
+        style={{backgroundColor: props.color == 'white' ?'black':'white',color: props.color} }
         id="demo-simple-select-helper-label"
       >
         Filter

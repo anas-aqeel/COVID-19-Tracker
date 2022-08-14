@@ -1,5 +1,6 @@
 export let sortByCases = (countryData) => {
-  return countryData.slice(0, 10);
+  let a = [...countryData];
+  return a.sort((a,b)=>b.cases-a.cases).slice(0, 10);
 };
 
 export let sortByDeaths = (countryData) => {

@@ -22,7 +22,7 @@ export default function StatsContainer() {
           <div className="card_container">
             <InfoCard
               title="Cases"
-              active={true}
+              active={queryType=='cases'}
               total={queryData?.cases}
               cases={queryData?.todayCases}
               isRed={true}
@@ -30,7 +30,7 @@ export default function StatsContainer() {
             />
             <InfoCard
               title="Recovered"
-              active={false}
+              active={queryType=='recovered'}
               total={queryData?.recovered}
               cases={queryData?.todayRecovered}
               isRed={false}
@@ -39,7 +39,7 @@ export default function StatsContainer() {
             />
             <InfoCard
               title="Deaths"
-              active={false}
+              active={queryType=='deaths'}
               total={queryData?.deaths}
               cases={queryData?.todayDeaths}
               isRed={true}
@@ -49,7 +49,7 @@ export default function StatsContainer() {
             <InfoCard
               title="Population"
               onClick={()=>setQueryType('population')}
-              active={false}
+              active={queryType=='population'}
               total={queryData?.population}
               cases={queryData?.population}
               isRed={false}

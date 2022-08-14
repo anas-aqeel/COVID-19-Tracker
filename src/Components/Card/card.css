@@ -5,6 +5,11 @@
     cursor: pointer;
     box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5) !important;
   }
+  .infoBox:hover{
+    background-color: rgb(253, 253, 253);
+    box-shadow: 5px 5px 17px -6px rgba(0, 0, 0, 0.5) !important;
+    border-top: 10px solid;
+  }
   
   .infoBox:not(:last-child) {
     margin-right: 10px;
@@ -27,12 +32,15 @@
   }
   
   .infoBox__cases--green {
-    color: lightgreen !important;
+    color: rgb(16, 133, 16) !important;
   }
   
   .infoBox--selected {
+    background-color: rgb(235, 235, 235);
+    box-shadow: 5px 5px 17px -6px rgba(0, 0, 0, 0.5) !important;
     border-top: 10px solid rgb(6, 32, 71);
   }
+ 
   
   .infoBox--red {
     border-color: rgb(82, 7, 7);

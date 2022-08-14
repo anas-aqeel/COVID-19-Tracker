@@ -1,4 +1,4 @@
-import React, {  useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import GraphCard from "../Components/Graph/GraphCard";
@@ -32,13 +32,13 @@ export default function GraphsContainer() {
   );
   let [sortCases, setSortedCases] = useState({
   })
-  useEffect(()=>{
+  useEffect(() => {
     setSortedCases({
       cases: sortByCases(countryData),
       deaths: sortByDeaths(countryData),
       recovery: sortByRecoveries(countryData),
     })
-  },[])
+  }, [])
   return (
     <div className="graph_container">
       <div className="select_container">

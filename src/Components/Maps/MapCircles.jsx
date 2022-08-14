@@ -1,6 +1,8 @@
 import React from "react";
 import numeral from "numeral";
-import { Circle, Popup } from "react-leaflet";
+import { Circle, Popup,useMapEvents } from "react-leaflet";
+import { useContext } from "react";
+import { MyContext } from "../../Context/GlobalContext";
 
 const casesTypeColors = {
   cases: {
@@ -17,12 +19,26 @@ const casesTypeColors = {
   },
 };
 
-export const showDataOnMap = (data, casesType = "cases") =>{
+function QueryData(query) {
+  const map = useMapEvents({
+    popupopen(){
+      query()
+    }
+  })
+}
+
+export const ShowDataOnMap = ({data, casesType}) =>{
+  let {
+    fetchQueryData,
+  } = useContext(MyContext);
 
   return data.map((country) => ( 
-   
+    <>
+      {/* fetchQueryData(`countries/${country.country}`) */}
+    
     <Circle
-      key={country.country}
+    
+      key={country.countryInfo.iso3}
       center={[country.countryInfo.lat, country.countryInfo.long]}
       color="#CC1034"
       fillColor="red"
@@ -32,7 +48,8 @@ export const showDataOnMap = (data, casesType = "cases") =>{
         casesTypeColors[casesType].multiplier
       }
     >
-      <Popup>
+      <Popup closeOnEscapeKey={true}>
+        
         <div className="info-container">
           <div
             className="info-flag"
@@ -51,4 +68,5 @@ export const showDataOnMap = (data, casesType = "cases") =>{
         </div>
       </Popup>
     </Circle>
+    </>
   ))};

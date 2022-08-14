@@ -17,7 +17,7 @@ export default function MyTable() {
     fetchQueryData,
   } = useContext(MyContext);
 
-  const rows = countryData
+  const rows = [...countryData]
     ?.sort((a, b) => b.cases - a.cases)
     ?.map((country) => {
       return {
