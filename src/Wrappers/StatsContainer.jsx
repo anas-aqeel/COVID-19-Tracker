@@ -1,9 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import MyTable from "../Components/MuiTable";
-import Map from "../Components/Map";
-import InfoCard from "../Components/InfoCard";
+import MyTable from "../Components/Table/MuiTable";
+import Map from "../Components/Maps/Map";
+import InfoCard from "../Components/Card/InfoCard";
 import "./wrapper.css";
 import { MyContext } from "../Context/GlobalContext";
 import { useContext } from "react";
@@ -44,10 +44,11 @@ export default function StatsContainer() {
               cases={queryData?.todayDeaths}
               isRed={true}
               onClick={()=>setQueryType('deaths')}
-
-            />
+              
+              />
             <InfoCard
               title="Population"
+              onClick={()=>setQueryType('population')}
               active={false}
               total={queryData?.population}
               cases={queryData?.population}

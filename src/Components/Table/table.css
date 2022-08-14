@@ -1,0 +1,36 @@
+.table {
+    display: grid;
+    margin: 0px 8px;
+    margin-top: 20px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    color: #6a5d5d;
+    background-color: white;
+    border-radius: 5px;
+    height: 520px;
+    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  .sticky {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: white;
+  }
+  .sticky-header {
+    position: sticky;
+    position: static;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background: white;
+  }
+  .sticky-header-label {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 10000 !important;
+    background: #fff;
+  }
+  

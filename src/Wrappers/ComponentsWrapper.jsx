@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import Navbar from "../Components/Navbar";
+import Navbar from "../Components/NavBar/Navbar";
 import StatsContainer from "./StatsContainer";
 import GraphsContainer from "./GraphContainer";
-import Footer from "../Components/Footer";
-import Spinner from "../Components/spinner";
+import Footer from "../Components/Footer/Footer.jsx";
+import Spinner from "../Components/Mui/spinner";
 import { MyContext } from "../Context/GlobalContext";
 
 const ComponentsWrapper = () => {

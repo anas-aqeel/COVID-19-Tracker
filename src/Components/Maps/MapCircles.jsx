@@ -1,7 +1,6 @@
 import React from "react";
 import numeral from "numeral";
 import { Circle, Popup } from "react-leaflet";
-import { red } from "@mui/material/colors";
 
 const casesTypeColors = {
   cases: {
@@ -13,10 +12,15 @@ const casesTypeColors = {
   deaths: {
     multiplier: 4800,
   },
+  population: {
+    multiplier: 3600,
+  },
 };
 
-export const showDataOnMap = (data, casesType = "cases") =>
-  data.map((country) => (
+export const showDataOnMap = (data, casesType = "cases") =>{
+
+  return data.map((country) => ( 
+   
     <Circle
       key={country.country}
       center={[country.countryInfo.lat, country.countryInfo.long]}
@@ -47,4 +51,4 @@ export const showDataOnMap = (data, casesType = "cases") =>
         </div>
       </Popup>
     </Circle>
-  ));
+  ))};

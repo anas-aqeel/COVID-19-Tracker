@@ -5,11 +5,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import "./components.css";
+import "./table.css";
 
 import numeral from "numeral";
 import React, { useContext } from "react";
-import { MyContext } from "../Context/GlobalContext";
+import { MyContext } from "../../Context/GlobalContext";
 
 export default function MyTable() {
   let {
@@ -29,15 +29,14 @@ export default function MyTable() {
         population: country.population,
       };
     });
-  console.log(rows);
 
   return (
     <TableContainer className="table" component={Paper}>
-      <Table sx={{ minWidth: 650 }} stickyHeader aria-label="sticky table">
-        <TableBody>
-          <TableRow>
+      <Table sx={{ minWidth: 650 }} stickyHeader={true} aria-label="table">
+        <TableHead>
+          <TableRow className="sticky-header">
             <TableCell
-              className={"sticky"}
+              className={"sticky-header-label"}
               component="th"
               scope="row"
               sx={{ width: 100 }}
@@ -49,12 +48,14 @@ export default function MyTable() {
             <TableCell align="center">Deaths</TableCell>
             <TableCell align="center">Population&nbsp;</TableCell>
           </TableRow>
-        </TableBody>
+        </TableHead>
         <TableBody>
           {rows.map((row) => {
-            console.log(row);
             return (
               <TableRow
+                style={{ cursor: 'pointer' }}
+                hover={true}
+                onClick={() => fetchQueryData(`countries/${row.name}`)}
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
@@ -65,21 +66,28 @@ export default function MyTable() {
                   sx={{ width: 100 }}
                 >
                   <img
-                    style={{marginRight:'8px'}}
+                    style={{ marginRight: "8px" }}
                     src={row.flag}
                     alt={row.country}
                     width={20}
                   />
+
                   {row.name}
                 </TableCell>
 
-                <TableCell align="center">{row.cases}&nbsp;</TableCell>
-                <TableCell align="center">{row.recovered}&nbsp;</TableCell>
-                <TableCell align="center">{row.deaths}&nbsp;</TableCell>
+                <TableCell align="center">
+                  {`+${numeral(row.cases).format("0.0a")}`}&nbsp;
+                </TableCell>
+                <TableCell align="center">
+                  {`+${numeral(row.recovered).format("0.0a")}`}&nbsp;
+                </TableCell>
+                <TableCell align="center">
+                  {`+${numeral(row.deaths).format("0.0a")}`}&nbsp;
+                </TableCell>
                 <TableCell align="center">
                   {Number(row.population) === 0
-                    ? row.cases + row.recovered
-                    : row.population}
+                    ? `+${numeral(row.cases + row.recovered).format("0.0a")}`
+                    : `+${numeral(row.population).format("0.0a")}`}
                 </TableCell>
               </TableRow>
             );

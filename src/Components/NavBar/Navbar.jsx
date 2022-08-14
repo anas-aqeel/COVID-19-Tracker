@@ -3,9 +3,9 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import SelectLabels from "./Select";
+import SelectLabels from "../Mui/Select";
 import { useContext } from "react";
-import { MyContext } from "../Context/GlobalContext";
+import { MyContext } from "../../Context/GlobalContext";
 import { MenuItem } from "@mui/material";
 
 export default function ButtonAppBar() {
@@ -16,12 +16,12 @@ export default function ButtonAppBar() {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar style={{backgroundColor: '#fd0000e0'}} position="sticky">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               COVID-19 Tracker
             </Typography>
-            <SelectLabels onClick={() => fetchQueryData(`all`)}>
+            <SelectLabels color='white' onClick={() => fetchQueryData(`all`)}>
               {countryData?.map((e) => (
                 <MenuItem
                   onClick={() => fetchQueryData(`countries/${e.country}`)}

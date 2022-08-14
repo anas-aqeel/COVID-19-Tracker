@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
-import "./components.css";
+import "./card.css";
 import numeral from "numeral";
 
 function InfoCard({ title, cases, total, active, isRed, onClick }) {

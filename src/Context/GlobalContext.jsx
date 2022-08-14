@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import { sortByCases, sortByDeaths, sortByRecoveries } from "../utils/filterCountries";
 
 let initialData = {
   countryData: [],

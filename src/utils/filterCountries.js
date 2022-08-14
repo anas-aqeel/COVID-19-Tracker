@@ -1,15 +1,16 @@
 export let sortByCases = (countryData) => {
-  return countryData.slice(0,10);
+  return countryData.slice(0, 10);
 };
 
 export let sortByDeaths = (countryData) => {
-  return countryData.slice(0,10);
+  let a = [...countryData];
+  return a.sort((a, b) => b.deaths - a.deaths).slice(0, 10);
 };
 
 export let sortByRecoveries = (countryData) => {
-  return countryData.slice(0,10);
+  let a = [...countryData];
+  return a.sort((a, b) => b.recovered - a.recovered).slice(0, 10);
 };
-
 
 export let filterListData = (countryData) => {
   return countryData?.map((e) => {
@@ -18,6 +19,7 @@ export let filterListData = (countryData) => {
       cases: e.cases,
       deaths: e.deaths,
       recoveries: e.recovered,
+      flag: e.countryInfo.flag,
     };
   });
 };

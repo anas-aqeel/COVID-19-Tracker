@@ -1,14 +1,14 @@
 import React, {  useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import GraphCard from "../Components/GraphCard";
-import SelectLabels from "../Components/Select";
+import GraphCard from "../Components/Graph/GraphCard";
+import SelectLabels from "../Components/Mui/Select";
 import linegraph from "../assets/images/linegraph.png";
 import piegraph from "../assets/images/piegraph.png";
 import bargraph from "../assets/images/bargraph.png";
-import DoughnutGraph from "../Components/Graphs/DoughnutGraph";
-import LineGraph from "../Components/Graphs/LineGraph";
-import BarGraph from "../Components/Graphs/BarGraph";
+import DoughnutGraph from "../Components/Graph/Graphs/DoughnutGraph";
+import LineGraph from "../Components/Graph/Graphs/LineGraph";
+import BarGraph from "../Components/Graph/Graphs/BarGraph";
 import MenuItem from "@mui/material/MenuItem";
 import {
   sortByCases,
@@ -43,17 +43,18 @@ export default function GraphsContainer() {
     <div className="graph_container">
       <div className="select_container">
         <SelectLabels
+          color='black'
           onClick={() => {
             let a = filterListData(countryData)
             setFilteredList(a);
-            SetMyGraph(<LineGraph filteredData={a} />)
+            SetMyGraph(<MyGraph.type filteredData={a} />)
           }}
         >
           <MenuItem
             onClick={() => {
               let a = filterListData(sortCases.cases);
               setFilteredList(a);
-              SetMyGraph(<LineGraph filteredData={a} />);
+              SetMyGraph(<MyGraph.type filteredData={a} />);
             }}
             value="cases"
           >
@@ -63,7 +64,7 @@ export default function GraphsContainer() {
             onClick={() => {
               let a = filterListData(sortCases.deaths);
               setFilteredList(a);
-              SetMyGraph(<LineGraph filteredData={a} />);
+              SetMyGraph(<MyGraph.type filteredData={a} />);
             }}
             value="deaths"
           >
@@ -73,7 +74,7 @@ export default function GraphsContainer() {
             onClick={() => {
               let a = filterListData(sortCases.recovery);
               setFilteredList(a);
-              SetMyGraph(<LineGraph filteredData={a} />);
+              SetMyGraph(<MyGraph.type filteredData={a} />);
             }}
             value="recoveries"
           >
