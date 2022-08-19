@@ -46,7 +46,7 @@ React Realtime worldwide Covid-19 Tracker with Graphs and Maps integration
 ## Demo
 
 #### Live Demo 👇👇:
- https://62f7be8694aca535f6cf61ec--moonlit-alpaca-e5259d.netlify.app/#close
+ https://beingguru.netlify.app/
 
 ## Want to clone just UI?
 #### Switch Branch to gh-pages
